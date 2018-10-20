@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="googlemaps.css">
+    <script src="googlemaps.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+    <div class="container-fluid" id="main">
+      <div class="row" id="main-row">
+        <div class="col-sm-3" id="side-menu">
+          <div class="container-fluid" id="title">
+            <div class="col-sm-4">
+              <img class="logo" src="wta-logo.png" alt="Washington Trails Association">
+            </div>
+            <div class="col-sm-8">
+              <h1 id="logo-title">Washington Hiker Guide</h1>
+            </div>
+          </div>
+          <form>
+            <div class="row">
+              <input type="text" size="30" placeholder="search" id="search-bar">
+              <button type="button" class="btn btn-primary" id="search-button"><span class="glyphicon glyphicon-search"></span> Search</button>
+            </div>
+            <div class="row">
+              <button type="button" class="btn" id="hide-btn">Hide Markers</button>
+              <button type="button" class="btn" id="show-btn">Show Markers</button>
+            </div>
+            <div class="row">
+              <div class="slidecontainer">
+                <p class="row"><img src="svgs/rating.svg"> Minimum Rating: <span id="rating-value"></span></p>
+                <input type="range" min="0" max="5" value="0"class="slider" id="rating-slide">
+              </div>
+            </div>
+            <div class="row">
+              <div class="slidecontainer">
+                <p class="row"><img src="svgs/elevation.svg"> Minimum Gain: <span id="gain-value"></span>ft.</p>
+                <input type="range" min="0" max="10" value="0"class="slider" id="gain-slide">
+              </div>
+            </div>
+            <div class="row">
+              <div class="slidecontainer">
+                <p class="row"><img src="svgs/elevation.svg"> Minimum Peak: <span id="peak-value"></span>ft.</p>
+                <input type="range" min="0" max="20" value="0" class="slider" id="peak-slide">
+              </div>
+            </div>
+            <div class="row">
+              <div class="slidecontainer">
+                <p class="row"><img src="svgs/length.svg"> Minimum Length: <span id="distance-value"></span> miles</p>
+                <input type="range" min="0" max="10" value="0" class="slider" id="distance-slide">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-9 no-padding" id="map-area">
+          <div class="container-fluid no-padding">
+            <div id="map">
+            </div>
+          </div>
+          <div id="hike-modals">
+            <div class="card hike-info" id="modal">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                Content
+                <button class="btn btn-warning" id="close-modal">Close</button>
+              </div>
+              <div class="card-footer">Footer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidenav">
+      <a href="https://www.facebook.com/washingtontrails" class="fa fa-facebook"></a>
+      <a href="https://twitter.com/WTA_hikers" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-snapchat"></a>
+      <a href="https://www.instagram.com/washingtontrails/" class="fa fa-instagram"></a>
+    </div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFH2kqZdjlBjlCqPm_fZmq62_4oGk2o48&callback=initMap">
+    </script>
+  </body>
+</html>
