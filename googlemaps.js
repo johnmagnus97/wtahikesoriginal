@@ -497,7 +497,7 @@ function initMap() {
     zoom: 7,
     center: uluru,
   });
-  fetch("python/hikes2.txt")
+  fetch("python/hikes.txt")
     .then(checkStatus)
     .then(function(responseText) {
       //ajax call succeeded
